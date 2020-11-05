@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Atividade 12</title>
+	<meta charset="utf8">
+</head>
+<body onload="limpar()">
+	<form id="frmFormPrincipal" onsubmit="validar()">
+		<h1>Formulário Principal</h1>
+		<hr>
+		<p>Nome</p>
+		<input type="text" id="txtNome">
+		<p>Email</p>
+		<input type="text" id="txtEmail">
+		<p>Comentário</p>
+		<textarea id="txtaComentario"></textarea>
+		<p>Primeira vez nesta página?</p>
+		<input type="radio" id="rdbSim" name="primeiraVez" value="sim">
+		<label for="rdbSim">Sim</label>
+		<input type="radio" id="rdbNao" name="primeiraVez" value="nao">
+		<label for="rdbNao">Não</label>
+		<br>
+		<input type="submit">
+		<button id="btnLimpar" onclick="window.load()">Limpar</button>
+	</form>
+
+	<script src="js/script.js"></script>
+</body>
+</html>
