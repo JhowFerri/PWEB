@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Atividade 13</title>
+	<meta charset="utf8">
+</head>
+<body onload="ocultar()">
+	<label for="curso">Curso: </label>
+	<select id="curso" onchange="questionar()">
+		<option value="">Selecione...</option>
+		<option value="ads">Análise e Desenvolvimento de Sistemas</option>
+		<option value="ea">Eletrônica Automotiva</option>
+		<option value="fm">Fabricação Mecânica</option>
+	</select>
+
+	<div id="questionamento">
+		<p>Tem certeza de que desejar ir para a página do curso selecionado?</p>
+		<button id="questSim" onclick="sim()">Sim</button>
+		<button id="questNao" onclick="nao()">Não</button>
+	</div>
+
+	<script>
+		function ocultar(){
+			document.getElementById("questionamento").style.opacity = 0;
+			document.getElementById("questSim").disabled = true;
+			document.getElementById("questNao").disabled = true;
+			document.getElementById("curso").selectedIndex = 0;
+		}
+		function questionar(){
+			document.getElementById("questionamento").style.opacity = 1;
+			document.getElementById("questSim").disabled = false;
+			document.getElementById("questNao").disabled = false;
+		}
+		function sim(){
+			switch(document.getElementById("curso").value){
+				case 'ads':
+					window.open("http://www.fatecsorocaba.edu.br/curso_ads.asp");
+					break;
+				case 'ea':
+					window.open("http://www.fatecsorocaba.edu.br/curso_ea.asp");
+					break;
+				case 'fm':
+					window.open("http://www.fatecsorocaba.edu.br/curso_fm.asp");
+					break;
+				default:
+					alert('Selecione um curso!');
+					break;
+			}
+		}
+		function nao(){
+			ocultar();
+		}
+	</script>
+</body>
+</html>
